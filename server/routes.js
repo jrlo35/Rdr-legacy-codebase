@@ -169,7 +169,7 @@ var routes = [
       });
     }
   },
-
+  {
     path: '/meetup/details/:id',
     get: function (req, res) {
       meetup_id = req.params.id;

@@ -154,6 +154,7 @@ var routes = [
       });
     }
   },
+
   {
     // get all meetups for specific book; :id = book_id
     path: '/meetup/:id',
@@ -168,6 +169,7 @@ var routes = [
       });
     }
   },
+
   {
 
     //:id = meetup_id

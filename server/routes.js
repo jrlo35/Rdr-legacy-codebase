@@ -170,9 +170,6 @@ var routes = [
     }
   },
 
-  {
-
-    //:id = meetup_id
     path: '/meetup/details/:id',
     get: function (req, res) {
       meetup_id = req.params.id;
@@ -181,10 +178,12 @@ var routes = [
         res.send(meetup);
       }, function (error) {
         console.log(error);
+
         res.sendStatus(409);
       });
      }
    },
+
 
 
     {//:id=user id
@@ -199,6 +198,7 @@ var routes = [
         }, function (error) {
         console.log(error);
         res.sendStatus(409);
+
 
       });
     }

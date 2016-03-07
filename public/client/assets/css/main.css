@@ -69,8 +69,7 @@ footer {
 .amz-btn:active {
   opacity: 0.4; }
 
-.read-btn,
-.meet-btn {
+.read-btn {
   display: inline-flex;
   padding-top: 1px;
   margin-left: 10px;
@@ -88,6 +87,7 @@ footer {
   align-items: center;
   justify-content: center; }
 
+
 .read-btn:hover,
 .meet-btn:hover {
   background-color: #e6e7e8;
@@ -97,6 +97,7 @@ footer {
 .meet-btn:active {
   background-color: #e6e7e8;
   opacity: 0.4; }
+
 
 .search {
   background-color: white;
@@ -188,6 +189,7 @@ form.book h3 {
   background-color: #a4adb7;
   margin: 0px;
   -webkit-overflow-scrolling: touch; }
+
 
 /*changes*/
 a {
@@ -295,6 +297,7 @@ a:visited {
 
 }
 /*changes*/
+
 .new-book {
   margin-bottom: 0px; }
 
@@ -514,6 +517,7 @@ input[type=range] {
 #map {
   margin-top: .5rem; }
 
+
 #meetupTime -webkit-inner-spin-button {
   display: none; }
 
@@ -524,6 +528,7 @@ input[type=range] {
   text-overflow: ellipsis;
   margin-right: 0px;
 }
+
 
 @media (min-width: 600px) {
   .book-entry {

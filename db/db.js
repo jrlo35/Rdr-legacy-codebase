@@ -163,6 +163,7 @@ var createMeetupsUsers = function () {
         console.log('created table meetups_users');
       })
       .catch( function (err) {
+        console.log(err,'errrr')
         console.error(err);
       });
     }

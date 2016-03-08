@@ -286,16 +286,19 @@ angular.module('booklist.user', [])
     $window.location.href = '/#/create';
   };
 
-  // $scope.userMeetups = function() {
-  //   Books.getUserMeetups()
-  //   .then(function(resp) {
-  //     $scope.userMeetupsData = resp.data;
-  //   });
+  $scope.userMeetups = function() {
+    console.log('click')
+    Books.getUserMeetups()
+    .then(function(resp) {
+      $scope.userMeetupsData = resp.data;
+    });
+
 
 
   //   // $scope.userMeetupsData = [{data:'meetup1'}, {data:'meetup2'}];
 
   // };
+
 
   $scope.initialize();
   //$scope.userMeetups();

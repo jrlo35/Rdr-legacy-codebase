@@ -53,7 +53,7 @@ angular.module('booklist.services', [])
     var getUserMeetups = function() {
       return $http({
         method: 'GET',
-        url: '/profile/meetup'
+        url: '/profile/meetups'
       });
     };
 
@@ -81,7 +81,8 @@ angular.module('booklist.services', [])
       getProfile: getProfile,
       getBooks: getBooks,
       postBook: postBook,
-      queryAmazon: queryAmazon
+      queryAmazon: queryAmazon,
+      getUserMeetups: getUserMeetups
     };
   }])
   .run(['$rootScope', function ($rootScope){

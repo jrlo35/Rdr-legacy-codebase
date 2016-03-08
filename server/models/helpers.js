@@ -227,12 +227,15 @@ var addMeetup = function (location, description, dateTime, book, host, success, 
     .then(function () {
       findOrCreate(models.Meetup, attributes)
         .then(function (meetup) {
+
           // addUsertoMeetup(host.get('id'), attributes.id)
           console.log('made meetup', meetup);
+
           success(meetup);
         });
     })
     .catch(function (error) {
+      console.log(error, 'ERRROR')
       fail(error);
     });
 };
@@ -273,23 +276,44 @@ var getMeetupDetails = function (meetupid, success, fail) {
 };
 
 // get list of meetups user has joined user is user id
-// var getUsersMeetups = function (userid, success, fail) {
-//   // join user id with all user's meetups
-//   //user.get('id')
-//   db.knex.select('meetups.*')
-//     .from('meetups')
-//     .innerJoin('meetups_users', 'meetup_id', 'meetups_users.meetup_id')
-//     .where({'meetups_users.user_id': userid})
-//     .then(function (meetups) {
-//       success(meetups);
-//     })
-//   .catch(function (error){
-//     fail(error);
-//   });
-// };
+var getUserMeetups = function (userid, success, fail) {
+  // join user id with all user's meetups
+  //user.get('id')
+  var result =[];
+  db.knex.select('users.*')
+
+  .where({amz_auth_id: userid.amz_auth_id})
+  .from('users')
+  .then(function (users){
+    //array of 
+    db.knex.select('meetups_users.*')
+    .where({user_id: users[0].id})
+    .from('meetups_users')
+    .then(function (meetups) {
+      
+      var meetupDeets = function(meetups, cb){
+        meetups.forEach(function(meetup){
+          db.knex.select('meetups.*')
+          .where({id: meetup.id})
+          .from('meetups')
+          .then(function (meetup){
+          console.log(meetup,'(((((')
+          result.push(meetup)
+      
+          })
+        })
+      cb(result)
+      }
+      return meetupDeets(meetups, success)
+    })
+  })
+  .catch(function (error){
+    fail(error);
+  });
+};
 
 
-
+//all the meetups from one user
 
 var getAllUsersFromMeetup = function (meetupid, success, fail) {
   db.knex.select('users.*')
@@ -329,7 +353,9 @@ module.exports = {
   addMeetup: addMeetup,
   getMeetups: getMeetups,
   getMeetupDetails: getMeetupDetails,
+
   // getUsersMeetups: getUsersMeetups,
+
   getBookDetails: getBookDetails
 
 

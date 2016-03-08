@@ -182,7 +182,6 @@ var routes = [
     }
   },
   {
-
     //:id = meetup_id
     path: '/meetup/details/:id',
     get: function (req, res) {
@@ -201,12 +200,13 @@ var routes = [
       var user = {
         amz_auth_id: req.user.sub
       };
-      helpers.getUsersMeetups(user, function (meetups) {
+      helpers.getUserMeetups(user, function (meetups) {
+        console.log(meetups,'444444')
         res.send(meetups);
+        
         }, function (error) {
         console.log(error);
         res.sendStatus(409);
-
       });
     }
   },

@@ -358,17 +358,11 @@ module.exports = {
   addMeetup: addMeetup,
   getMeetups: getMeetups,
   getMeetupDetails: getMeetupDetails,
-<<<<<<< bad6366be0e667c35e14e16fe2228a6986d8009a
+
 
   // getUsersMeetups: getUsersMeetups,
 
-=======
-<<<<<<< cfd0b94cdb8ec5fb397b5943f3d4d51f70341c4d
-  // getUsersMeetups: getUsersMeetups,
-=======
-  getUserMeetups: getUserMeetups,
->>>>>>> '(feat) Add join table'
->>>>>>> '(feat) Add join table'
+
   getBookDetails: getBookDetails
 
 

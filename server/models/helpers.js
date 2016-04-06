@@ -266,8 +266,7 @@ var getMeetupDetails = function (meetupid, success, fail) {
 
 // get list of meetups user has joined user is user id
 var getUsersMeetups = function (userid, success, fail) {
-  // join user id with all user's meetups
-  //user.get('id')
+  
   db.knex.select('meetups.*')
     .from('meetups')
     .innerJoin('meetups_users', 'meetup_id', 'meetups_users.meetup_id')
@@ -279,11 +278,6 @@ var getUsersMeetups = function (userid, success, fail) {
     fail(error);
   });
 };
-
-var addUsertoMeetup = function (user, meetup, success, fail) {
-
-}
-
 
 
 module.exports = {

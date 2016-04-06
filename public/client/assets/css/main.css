@@ -203,14 +203,9 @@ a:visited {
 
 @media (min-width: 800px) {
 
-  /*.book-collection {
-    text-align: center;
-  }*/
   .book-collection-horizontal {
     height: auto;
     display: inline-block;
-    /*max-height: 75vh;*/
-    /*overflow-y: auto;*/
     overflow-x: auto;
     white-space: nowrap;
     overflow-y: hidden;
